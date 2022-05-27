@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+body{background: url("../img/1.webp");margin:0px;padding:0px}
+#super{display:flex;background-color: lightgrey}
+#super div img{height:35px;border-bottom-style: none;}
+#super div{margin:15px}
+*{font-size:15px;font-family: cursive; box-sizing: border-box;text-decoration: none}
+.bg-text {
+color:blue;
+font-weight: bold;
+border: 3px solid #f1f1f1;
+border-radius:25px;
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+width: 35%;
+padding: 10px;
+text-align: center;
+background-color: white;
+}
+</style>
+</head>
+<body>
+
+<div id="super">
+<div>
+<a href="#"><img th:src="@{../img/logo.png}"></a>
+</div>
+<div>
+<a href="#"><input class="button" type="button" value=""></input></a>
+</div>
+<div>
+<a href="#"><input class="button" type="button" value=""></a>
+</div><div>
+<a href="#"><input class="button" type="button" value=""></a>
+</div>
+</div>
+<div class="bg-text">
+<table>
+    <thead>
+        <tr>
+            <th> question </th>
+            <th> a)</th>
+             <th> b) </th>
+            <th> c)</th>
+             <th> d) </th>
+             <th>  </th>
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${user.empty}">
+            <td colspan="2"> No Questions Available </td>
+        </tr>
+        <tr th:each="book : ${user}">
+            <td><h4 th:text="${book.question}"> </h4></td>
+            <td><h4 th:text="${book.option1}"> </h4></td>
+            <td><h4 th:text="${book.option2}"> </h4></td>
+            <td><h4 th:text="${book.option3}"> </h4></td>
+            <td><h4 th:text="${book.option4}"> </h4></td>
+            <td><input type="checkbox"></td>
+            </tr>
+    </tbody>
+</table>
+<form action="#" th:action="@{/re}">
+<input type="submit" value="submitTest">
+</form>
+</div>
+
+</body>
+</html>

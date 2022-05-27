@@ -1,0 +1,6 @@
+package com.converter.model;
+
+public class Result {
+
+	int result;
+}

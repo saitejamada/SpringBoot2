@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{background-color: lightblue;}
+*{font-size:cursive}
+</style>
+</head>
+<body>
+    <p>Booking Successfull Redirecting to Homepage in</p>
+    <div id="counter">5</div>
+    <script>
+        setInterval(function() {
+            var div = document.querySelector("#counter");
+            var count = div.textContent * 1 - 1;
+            div.textContent = count;
+            if (count <= 0) {
+                window.location.replace("http://localhost:8080/home");
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

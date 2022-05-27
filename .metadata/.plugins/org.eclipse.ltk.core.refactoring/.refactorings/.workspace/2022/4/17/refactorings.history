@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;AssignementRest&apos; to &apos;ConsumerJsonApp&apos;" description="Rename resource &apos;AssignementRest&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/AssignementRest" name="ConsumerJsonApp" stamp="1650632958313" updateReferences="true"/>
+</session>

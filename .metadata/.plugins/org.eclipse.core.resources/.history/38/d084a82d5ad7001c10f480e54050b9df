@@ -1,0 +1,5 @@
+package co.curreny.service;
+
+public class CurrencyService {
+
+}

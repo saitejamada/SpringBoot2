@@ -1,0 +1,22 @@
+package com.exam.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "answerexam")
+public class Answer {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int aid;
+	String answer1;
+	String answer2;
+	String answer3;
+	String answer4;
+	String answer5;
+	
+}

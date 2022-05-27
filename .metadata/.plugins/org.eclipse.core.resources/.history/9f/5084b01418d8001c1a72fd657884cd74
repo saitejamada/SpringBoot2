@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+#super{display:flex;background-color: lightgrey}
+#super div{margin:10px}
+body{background:url("../img/bg1.webp"); background-repeat:no-repeat;background-position:center;background-size:cover; margin:0px;padding:0px}
+*{font-size:15px;font-family: cursive; box-sizing: border-box;text-decoration: none}
+.bg-text {
+color:blue;
+font-weight: bold;
+border: 3px solid #f1f1f1;
+border-radius:25px;
+position: absolute;
+top: 48%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+height:50%;
+width: 35%;
+padding: 10px;
+text-align: center;
+background-color: white;
+}
+</style>
+</head>
+<body>
+<div class="bg-text">
+<form action="#" th:action="@{/addbus}" th:object="${user}" method="post">
+  <h1>Registration page</h1>
+  
+	<label for="busid">busid</label>
+    <input type="number" th:field="*{busid}" id="name" placeholder="busid">
+    <br><br>
+    <label for="name">name</label>
+    <input type="text" th:field="*{name}" id="aadharnumber" placeholder="name">
+    <br><br>
+    <label for="busfrom">busfrom</label>
+    <input type="text" th:field="*{busfrom}" id="aadharnumber" placeholder="busfrom">
+    <br><br>
+    <label for="busto">busto</label>
+    <input type="text" th:field="*{busto}" id="aadharnumber" placeholder="busto">
+    <br><br>
+    <label for="price">price</label>
+    <input type="text" th:field="*{price}" id="aadharnumber" placeholder="price">
+    <br><br>
+    <input type="submit" value="Submit">  
+ </form>
+ <p th:text="${msg}"></p>
+ </div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+package com.converter.service;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.converter.model.Currency;
+
+@Service
+public class CurrencyService {
+
+	RestTemplate  template;
+	
+	public ResponseEntity<Currency> searchEmployeeById(String currency)
+	{
+		String url="http://localhost:8081/"+currency;
+		ResponseEntity<Currency> entity=template.getForEntity(url, Currency.class);
+		Currency  s=(Currency) entity.getBody();
+		System.out.println("The Employee details"+s);
+		return entity;
+	}
+}

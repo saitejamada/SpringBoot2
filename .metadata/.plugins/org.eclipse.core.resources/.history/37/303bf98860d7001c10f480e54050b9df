@@ -1,0 +1,35 @@
+package com.converter.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.converter.model.Currency;
+import com.converter.model.Result;
+
+@Controller
+public class Currencycontroller {
+
+	
+	@RequestMapping("/home")
+	public String goHome(Model m) {
+		Currency c=new Currency();
+		m.addAttribute("user", c);
+		return "Homepage";
+	}
+	@RequestMapping("/convert")
+	public String convert(@ModelAttribute("user") Currency c,Model m) {
+		String name=c.getCurrencyname();
+		double res = 0;
+		Result r=new Result();
+		if(name.equals("dollar"))
+		{
+			 res=c.getCurrency1()/61.06;
+		}
+		r.setResult(res);
+		m.addAttribute("result", res);
+		return "Homepage";
+	}
+	
+}

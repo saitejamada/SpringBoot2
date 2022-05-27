@@ -1,0 +1,87 @@
+	<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+#super{display:flex;background-color: lightgrey}
+#super div{margin:10px}
+body{background:url("../img/flightbg.webp"); background-repeat:no-repeat;background-position:inherit;background-size:cover;margin:0px;padding:0px}
+*{font-size:15px;font-family: cursive; box-sizing: border-box;text-decoration: none}
+.bg-text {
+color:blue;
+font-weight: bold;
+border: 3px solid #f1f1f1;
+border-radius:25px;
+position: absolute;
+top: 48%;
+left: 20%;
+transform: translate(-50%, -50%);
+z-index: 2;
+height:51%;
+width: 35%;
+padding: 10px;
+text-align: center;
+background-color: white;
+}
+.button{background-color: white;width:100px;border-bottom-style: groove;border-radius: 5px;}
+#side{background-color: white;margin-top:80px;margin-left:470px;height:145px;width:240px;border-radius: 5px;}
+#side2{background-color: white;margin-top:5px;margin-left:470px;width:240px;height:150px;border-radius: 5px;}
+#side3{background-color: white;margin-top:-150px;margin-left:720px;width:320px;height:150px;border-radius: 5px;}
+
+#side img{ height:100px;}
+
+#side2  img{ height:100px;}
+
+#side3  img{ height:100px;}
+
+#super div img{height:35px;border-bottom-style: none;}
+</style>
+</head>
+<body>
+<div id="super">
+<div>
+<a th:href="@{home}"><img th:src="@{../img/logo.png}"></a>
+</div>
+<div>
+<a th:href="@{fi}"><input class="button" type="button" value="Flights"></input></a>
+</div>
+<div>
+<a th:href="@{home}"><input class="button" type="button" value="Bus"></a>
+</div><div>
+<a th:href="@{tr}"><input class="button" type="button" value="Train"></a>
+
+
+</div></div><div class="bg-text">
+<h1>Flight</h1>
+<form action="#" th:action="@{/flight}" th:object="${user}" method="post">
+<label for="journeyfrom">Boarding</label>
+<input type="text" th:field="*{journeyfrom}" id="fromt" placeholder="from">
+<br><br>
+<label for="journeyto">Destination</label>
+<input type="text" th:field="*{journeyto}" id="to" placeholder="to">
+<br><br>
+<label for="jouneydate">Date</label>
+<input type="date" th:field="*{jouneydate}" id="jouneydate" placeholder="jouneydate">
+<br><br>
+<label >Enter Tickets</label>
+<input type="number" placeholder="number of tickets">
+<br><br>
+<input type="submit" value="SearchFlight">
+</form>
+</div>
+<div id="side">
+<a href="#"><img  th:src="@{../img/side1.jpg}"></a>
+<p>Get Upto 50% Off</p>
+</div>
+<div id="side2">
+<a href="#"><img  th:src="@{../img/side2.jpg}"></a>
+<p>Exciting Deals</p>
+</div>
+<div id="side3">
+<a href="#"><img  th:src="@{../img/side3.png}"></a>
+<p>Safe and Secure</p>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="#" th:action="@{/aadhar/{aadharnumber}}" th:object="${user}" method="get">
+
+	<label for="name">Aadhar Number</label>
+    <input type="text" th:field="*{aadharnumber}" id="aadharnumber" placeholder="aadharnumber">
+    <input type="submit" value="Submit">   
+</form>
+</body>
+</html>

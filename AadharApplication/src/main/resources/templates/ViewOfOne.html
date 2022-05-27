@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table>    
+
+<tr>    
+<td><h4> Name: </h4></td>    
+<td><h4 th:text="${name}"></h4></td>    
+</tr>    
+
+<tr>    
+<td><h4>aadhar number </h4></td>    
+<td><h4 th:text="${aadharnumber}"></h4></td>    
+</tr>  
+
+<tr>    
+<td><h4>Photo:: </h4></td>    
+<td><img  th:src="@{'data:image/jpeg;base64,'+${image}}" /></td>
+</tr>  
+</table> 
+
+</body>
+</html>

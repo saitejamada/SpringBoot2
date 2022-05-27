@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+body{background: url("../img/1.webp");margin:0px;padding:0px}
+#super{display:flex;background-color: lightgrey}
+#super div img{height:35px;border-bottom-style: none;}
+#super div{margin:15px}
+*{font-size:15px;font-family: cursive; box-sizing: border-box;text-decoration: none}
+.bg-text {
+color:blue;
+font-weight: bold;
+border: 3px solid #f1f1f1;
+border-radius:25px;
+position: absolute;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+padding: 10px;
+text-align: center;
+background-color: white;
+}
+</style>
+</head>
+<body>
+
+<div id="super">
+<div>
+<a href="#"><img th:src="@{../img/logo.png}"></a>
+</div>
+<div>
+<a th:href="@{pi}"><input class="button" type="button" value="python"></input></a>
+</div>
+<div>
+<a href="#"><input class="button" type="button" value=""></a>
+</div><div>
+<a href="#"><input class="button" type="button" value=""></a>
+</div>
+</div>
+<div class="bg-text">
+<form action="#" th:action="@{/testjava}" th:object="${java}">
+<table>
+    <thead>
+    </thead>
+    <tbody>
+	<tr th:if="${user.empty}">
+            <td colspan="2"> No Questions Available </td>
+        </tr>
+        <tr th:each="book : ${user}">
+            <td><h4 th:text="${book.question}"> </h4></td>
+            <td><input type="radio" name="id" th:field="*{answer1}" th:value="a" ></td>
+            <td><h4 th:text="${book.option1}"> </h4></td>
+            <td><input type="radio" name="id" th:field="*{answer2}" th:value="b" ></td>
+            
+            <td><h4 th:text="${book.option2}"> </h4></td>
+            <td><input type="radio" name="id" th:field="*{answer3}" th:value="c" ></td>
+            
+            <td><h4 th:text="${book.option3}"> </h4></td>
+            <td><input type="radio" name="id" th:field="*{answer4}" th:value="d" ></td>
+            
+            <td><h4 th:text="${book.option4}"> </h4></td>
+            </tr>
+    </tbody>
+</table>
+<input type="submit" value="submit">
+</form>
+</div>
+
+</body>
+</html>

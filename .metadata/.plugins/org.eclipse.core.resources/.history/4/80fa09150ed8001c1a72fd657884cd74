@@ -1,0 +1,18 @@
+package com.exam.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="optionsexam")
+public class Options {
+
+	@Id
+	int optionid;
+	String option1;
+	String option2;
+	String option3;
+	String option4;
+	
+}

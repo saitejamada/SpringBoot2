@@ -6,6 +6,8 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Tweeter"/>
+			<item value="C:\Users\teja\Downloads\EmployeeApplication"/>
 			<item value="C:\Users\teja\Downloads\OnlineExaminationSystem"/>
 			<item value="C:\Users\teja\Downloads\MicroService"/>
 			<item value="C:\Users\teja\Downloads\ConsumerJsonApp"/>

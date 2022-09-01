@@ -1,5 +1,0 @@
-package co.curreny.repo;
-
-public interface CurrencyRepo {
-
-}

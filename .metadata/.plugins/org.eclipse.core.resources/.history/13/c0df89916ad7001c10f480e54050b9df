@@ -1,9 +1,0 @@
-package co.curreny.repo;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.converter.model.Currency;
-
-public interface CurrencyRepo extends JpaRepository<Currency, Integer> {
-
-}
